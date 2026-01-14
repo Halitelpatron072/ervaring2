@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $subject = htmlspecialchars($_POST['subject']);
     $message = htmlspecialchars($_POST['message']);
 
-    $to = "halit.momunjan@example.com"; // Replace with your actual email
+    $to = "halitmomunjan533@gmail.com";
     $headers = "From: $email\r\n";
     $headers .= "Reply-To: $email\r\n";
     $fullMessage = "Naam: $name\nEmail: $email\n\nBericht:\n$message";
