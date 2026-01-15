@@ -5,12 +5,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $subject = htmlspecialchars($_POST['subject']);
     $message = htmlspecialchars($_POST['message']);
 
-    $to = "halitmomunjan533@gmail.com";
-    $headers = "From: $email\r\n";
-    $headers .= "Reply-To: $email\r\n";
-    $fullMessage = "Naam: $name\nEmail: $email\n\nBericht:\n$message";
+    if (!is_dir('messages')) {
+        mkdir('messages', 0755, true);
+    }
 
-    if (mail($to, $subject, $fullMessage, $headers)) {
+    $file = 'messages/messages.txt';
+    $content = "Naam: $name\nEmail: $email\nOnderwerp: $subject\nBericht: $message\nDatum: " . date('Y-m-d H:i:s') . "\n---\n\n";
+
+    if (file_put_contents($file, $content, FILE_APPEND)) {
         $success = "Bedankt voor je bericht! Ik neem zo snel mogelijk contact met je op.";
     } else {
         $error = "Er is een fout opgetreden. Probeer het later opnieuw.";
@@ -79,6 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script>
         const hamburger = document.querySelector('.hamburger');
         const navUl = document.querySelector('nav ul');
+        const nav = document.querySelector('nav');
 
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
@@ -93,12 +96,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         });
 
         window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
+            nav.classList.toggle('scrolled', window.scrollY > 50);
         });
     </script>
 </body>

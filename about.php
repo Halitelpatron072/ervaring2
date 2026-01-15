@@ -1,5 +1,4 @@
-<?php
-?>
+<?php ?>
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -76,6 +75,7 @@
     <script>
         const hamburger = document.querySelector('.hamburger');
         const navUl = document.querySelector('nav ul');
+        const nav = document.querySelector('nav');
 
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
@@ -90,12 +90,7 @@
         });
 
         window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
+            nav.classList.toggle('scrolled', window.scrollY > 50);
         });
     </script>
 </body>
