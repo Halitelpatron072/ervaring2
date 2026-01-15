@@ -55,7 +55,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Ervaring. Alle rechten voorbehouden.</p>
+            <p>&copy; 2026 Halit Momunjan</p>
         </div>
     </footer>
 

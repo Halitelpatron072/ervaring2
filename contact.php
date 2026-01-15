@@ -33,7 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <ul>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="about.php">Over Mij</a></li>
-                <li><a href="cv/">CV</a></li>
                 <li><a href="contact.php">Contact</a></li>
             </ul>
             <div class="hamburger">
@@ -73,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Ervaring. Alle rechten voorbehouden.</p>
+            <p>&copy; 2026 Halit Momunjan</p>
         </div>
     </footer>
 
